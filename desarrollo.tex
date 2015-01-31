@@ -84,6 +84,24 @@ Obtenemos el siguiente resultado:
 \centerline\includegraphics{img/s3}}
 
 \emph{Modifique el programa para que se detenga con la señal SIGTSTP (18)}
+\\
+\begin{lstlisting}
+
+sigaction(18, &act2, NULL);
+
+\end{lstlisting}
+
+donde act2.sa_handler apunta a esta función:
+
+\begin{lstlisting}
+
+void tratar_SIGTSTP(int signum){
+    printf("La señal %d me ha intentado detener. Ilusa.\n", signum);
+}
+
+\end{lstlisting}
+
+\centerline{\includegraphics{img/s5}}
 
 \emph{Modifique el programa para que ninguna señal lo pueda detener.}
 \\

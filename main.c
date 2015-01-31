@@ -30,14 +30,11 @@ int main(void){
     printf("PID: %d\n", getpid());
 
     sigemptyset(&mask);
-    
-    sigfillset(&mask);
-    sigaddset(&mask, 18);
+
     sigprocmask(SIG_SETMASK, &mask, NULL);
 
-
     sigaction(SIGALRM, &act, NULL);
-    sigaction(18, &act3, NULL);
+    sigaction(18, &act2, NULL);
 
     for(;;){
         alarm(3);

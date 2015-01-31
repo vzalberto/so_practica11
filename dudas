@@ -1,1 +1,7 @@
 ¿por que aparece numero doble?
+
+con ayuda de 
+
+http://stackoverflow.com/questions/28247501/why-is-my-signal-handler-not-working/28247558#28247558
+
+Se recomienda inicializar en 0 los valores de la estructura sigaction para evitar valores aleatorios.
