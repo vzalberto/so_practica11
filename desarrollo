@@ -1,0 +1,12 @@
+¿Cuantas señales están definidas en su sistema?
+38 señales en total
+
+¿Cuales solo detienen el proceso?
+SIGSTOP (17, 19, 23)
+SIGTSTP (18, 20, 24)
+SIGTTIN (21, 26)
+SIGTTOU (22, 27)
+
+¿Cuáles señales no pueden ser capturadas?
+SIGKILL (9) y SIGSTOP (17, 19, 23)
+
