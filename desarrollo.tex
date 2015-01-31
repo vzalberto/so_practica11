@@ -83,3 +83,14 @@ Obtenemos el siguiente resultado:
 \\
 \centerline\includegraphics{img/s3}}
 
+\emph{Modifique el programa para que se detenga con la señal SIGTSTP (18)}
+
+\emph{Modifique el programa para que ninguna señal lo pueda detener.}
+\\
+Basta añadir la siguiente línea:
+\begin{lstlisting}
+sigfillset(&mask);
+\end{lstlisting}
+Y verificamos de primera mano que SIGKILL o SIGSTOP no pueden ser ignoradas:
+\\
+\centerline{\includegraphics{img/s4}}
