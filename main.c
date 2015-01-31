@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <signal.h>
 
-void tratar_alarma(void){
+void tratar_alarma(int signum){
     printf("Alarma activada\n");
+    printf("Numero de señal: %d\n", signum);
 }
 
 int main(void){
@@ -18,6 +19,7 @@ int main(void){
     sigaction(SIGALRM, &act, NULL);
 
     for(;;){
+        //ualarm(500000, 0);
         alarm(3);
         pause();
     }
