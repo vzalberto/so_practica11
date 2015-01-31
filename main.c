@@ -14,9 +14,11 @@ int main(void){
     act.sa_flags = 0;
 
     sigemptyset(&mask);
-    sigaddset(&mask, SIGQUIT);
     sigprocmask(SIG_SETMASK, &mask, NULL);
     sigaction(SIGALRM, &act, NULL);
+
+    if(sigismember(&mask, SIGQUIT))
+        sigdelset(&mask, SIGQUIT);
 
     for(;;){
         //ualarm(500000, 0);

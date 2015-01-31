@@ -66,3 +66,20 @@ El proceso nunca hará una impresión pues la señal siempre será ignorada.
 \emph{¿Cuál es la línea que se ejecuta inmediatamente después de ejecutarse el manejador de señales?}
 \\
 Línea 6 (declaración del temporizador al inicio del ciclo for)
+
+\emph{Ejercico 11.2}
+\\
+\emph{Modifique el programa para que la señal SIGQUIT (3) provoque su terminación}
+\\
+Basta con eliminar la llamada a sigaddset donde estamos añadiendo la misma SIGQUIT al conjunto de máscaras. También es posible removerla (si estuviera por defecto) e incluso hacer una validación:
+\begin{lstlisting}
+
+ if(sigismember(&mask, SIGQUIT))
+ 	sigdelset(&mask, SIGQUIT);
+
+\end{lstlisting}
+
+Obtenemos el siguiente resultado:
+\\
+\centerline\includegraphics{img/s3}}
+
